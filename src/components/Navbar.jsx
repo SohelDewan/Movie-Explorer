@@ -1,8 +1,9 @@
 import logo from '../assets/logoMv.png'
+import { Link } from "react-router"
 export default function Navbar() {
     return (
         <>
-            <div className="navbar bg-base-100 shadow-sm">
+            <div className="navbar bg-[#155dfc] ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -19,11 +20,11 @@ export default function Navbar() {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Navigate</a></li>
+                        <li><Link to="/movie-list">Navigate Movies</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Movie Page</a>
+                    <Link to="/movie-list" className="btn">Movie Page</Link>
                 </div>
             </div>
         </>
