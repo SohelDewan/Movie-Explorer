@@ -7,6 +7,8 @@ export default function MovieCard({movie, onSeeDetails}) {
     const year = movie.premiered? movie.premiered : "N/A";
     const rating = movie.rating? movie.rating?.average : "N/A";
     // const navigate = useNavigate();
+       const logoGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327]";
+       const hoverGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327] hover:bg-gradient-to-l transition-all duration-500";
 
   return (
     <>
@@ -18,7 +20,7 @@ export default function MovieCard({movie, onSeeDetails}) {
             <p className="text-sm text-gray-600"><span className="justify-between flex text-xl">Rating: ⭐ {rating} </span>Year of premiered📅: {year}</p>
             <button 
             onClick={()=>onSeeDetails(movie)}
-            className="btn bg-[#155dfc] text-white "
+            className={`btn ${logoGradient} ${hoverGradient} text-white`}
             >See Details</button>
         </div>
     </div>

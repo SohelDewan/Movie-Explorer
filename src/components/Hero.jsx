@@ -2,6 +2,9 @@ import { Link } from "react-router"
 
 export default function Hero() {
     // const navigate = useNavigate()
+    const logoGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327]";
+       const hoverGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327] hover:bg-gradient-to-l transition-all duration-500";
+
     return (
         <div
             className="hero min-h-screen"
@@ -17,7 +20,7 @@ export default function Hero() {
                     <p className="mb-5 text-2xl">
                        Explore and discover your favorite movies from around the world.
                     </p>
-                    <Link to="/movielist" className="btn bg-[#155dfc] text-white">Explore Movies</Link>
+                    <Link to="/movielist" className={`btn ${logoGradient} ${hoverGradient} text-white`}>Explore Movies</Link>
                 </div>
             </div>
         </div>

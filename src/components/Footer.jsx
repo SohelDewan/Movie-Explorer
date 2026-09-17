@@ -1,7 +1,9 @@
 import logo from '../assets/logoMv.png'
 export default function Footer() {
+    const oppositGradient = "bg-gradient-to-r from-[#FA7327] via-[#32DBE9] to-[#0F245B] bg:gradient-to-1";
+    
     return (
-        <footer className="footer footer-horizontal footer-center bg-[#155dfc] text-primary-content p-10">
+        <footer className={`footer footer-horizontal footer-center ${oppositGradient} $text-primary-content p-10`}>
             <aside>
                 <img src={logo} width={130} height={60} alt="logoMv.png" />
                 <p className="font-bold">

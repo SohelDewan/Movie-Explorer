@@ -1,9 +1,12 @@
 import logo from '../assets/logoMv.png'
 import { Link } from "react-router"
+
 export default function Navbar() {
+      const logoGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327]";
+       const hoverGradient = "bg-gradient-to-r from-[#0F245B] via-[#32DBE9] to-[#FA7327] hover:bg-gradient-to-l transition-all duration-500";
     return (
         <>
-            <div className="navbar bg-[#155dfc] ">
+            <div className={`navbar ${logoGradient}` } >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,11 +23,11 @@ export default function Navbar() {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='text-white text-xl'><Link to="/">Home</Link></li>
+                        <li  className={`btn ${logoGradient} ${hoverGradient} text-white`}><Link to="/">Home</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/movielist" className="btn">Movie Page</Link>
+                    <Link to="/movielist" className={`btn ${logoGradient} ${hoverGradient} text-white`}>Movie Page</Link>
                 </div>
             </div>
         </>
