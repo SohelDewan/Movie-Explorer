@@ -1,5 +1,6 @@
 import {  useNavigate } from "react-router";
 
+
 export default function MovieCard({movie}) {
 
     const posterUrl = movie.image?.medium || '/placeholder-poster.png';
@@ -10,6 +11,7 @@ export default function MovieCard({movie}) {
 
   return (
     <>
+    
     <div className="card border rounded-lg overflow-hidden shadow">
         <img src={posterUrl} alt={movie.name} className="w-full h-64 object-cover" />
         <div className="p-3">

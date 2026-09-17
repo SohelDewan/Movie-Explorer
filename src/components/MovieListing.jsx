@@ -19,7 +19,9 @@ export default function MovieListing() {
       })
   }, [query]);
 
-
+function shuffleArray(array){
+  return [...array].sort(()=>Math.random()- 0.5)
+}
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function MovieListing() {
       <div>
 
         <div className="pl-4 py-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {movies.slice(0, 6).map(movie => (
+          {shuffleArray(movies).slice(0, 6).map(movie => (
             <MovieCard key={movie.id} movie={movie} />))}
         </div>
 
