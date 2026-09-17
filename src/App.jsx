@@ -14,12 +14,12 @@ const router = createBrowserRouter([
         index : true,
         element : <Home/>
       },{
-        path : "/movie-list",
+        path : "/movielist",
         element : <MovieListing/>
       },
       {
-        path :"/movie-list/:id",
-        element : {MovieDetails}
+        path :"/movielist/:id",
+        element : <MovieDetails />
       }
     ]
   },

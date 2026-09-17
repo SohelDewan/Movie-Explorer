@@ -16,7 +16,6 @@ export default function MovieListing() {
       .then(res => res.json())
       .then(data => {
         setMovies(query ? data.map(item => item.show) : data);
-
       })
   }, [query]);
 

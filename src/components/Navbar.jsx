@@ -16,15 +16,15 @@ export default function Navbar() {
                             
                         </ul>
                     </div>
-                    <a className="btn btn-ghost"><img src={logo}height={40} width={110} alt="logo" /></a>
+                    <a className="btn "><img src={logo}height={40} width={110} alt="logo" /></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to="/movie-list">Navigate Movies</Link></li>
+                        <li className='text-white text-xl'><Link to="/">Home</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/movie-list" className="btn">Movie Page</Link>
+                    <Link to="/movielist" className="btn">Movie Page</Link>
                 </div>
             </div>
         </>

@@ -17,7 +17,7 @@ export default function Hero() {
                     <p className="mb-5 text-2xl">
                        Explore and discover your favorite movies from around the world.
                     </p>
-                    <Link to="/movie-list" className="btn bg-[#155dfc] text-white">Explore Movies</Link>
+                    <Link to="/movielist" className="btn bg-[#155dfc] text-white">Explore Movies</Link>
                 </div>
             </div>
         </div>
