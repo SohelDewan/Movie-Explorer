@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
+import MovieModal from "./MovieModal";
 
 export default function MovieListing() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [displayMovies, setDisplayMovies] = useState([])
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     const url = query
@@ -17,11 +20,15 @@ export default function MovieListing() {
       .then(data => {
         setMovies(query ? data.map(item => item.show) : data);
       })
+      .catch(err => console.error(err));
   }, [query]);
 
-function shuffleArray(array){
-  return [...array].sort(()=>Math.random()- 0.5)
-}
+  useEffect(() => {
+    const shuffled = [...movies].sort(() => Math.random() - 0.5);
+    setDisplayMovies(shuffled);
+  }, [movies]);
+
+
 
   return (
     <>
@@ -52,10 +59,12 @@ function shuffleArray(array){
       <div>
 
         <div className="pl-4 py-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
-          {shuffleArray(movies).slice(0, 6).map(movie => (
-            <MovieCard key={movie.id} movie={movie} />))}
+          {displayMovies.map(movie => (
+            <MovieCard key={movie.id} movie={movie} onSeeDetails={setSelectedMovie} />))}
+            {selectedMovie &&(
+             < MovieModal movie={selectedMovie} onClose={()=>setSelectedMovie(null)} />
+            )}
         </div>
-
       </div>
       <div>
         <Footer />
